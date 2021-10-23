@@ -1,11 +1,11 @@
 const express = require("express");
 const { MongoClient } = require("mongodb");
 const cors = require("cors");
+
 const app = express();
 const port = 5000;
 
-//middleware
-
+// middleware
 app.use(cors());
 app.use(express.json());
 
