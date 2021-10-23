@@ -20,6 +20,14 @@ client.connect((err) => {
   const collection = client.db("test").collection("devices");
   // perform actions on the collection object
   console.log("Hitting the database");
+  const user = {
+    name: "Tom cruse",
+    email: "tom@gmail.com",
+    phone: "019238356822",
+  };
+  collection.insertOne(user).then(() => {
+    console.log("insert success");
+  });
   //   console.error(err);
-  client.close();
+  //   client.close();
 });
