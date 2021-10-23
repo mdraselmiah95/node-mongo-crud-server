@@ -31,7 +31,7 @@ async function run() {
 
     //POST API
     app.post("/users", async (req, res) => {
-      console.log("hitting the post");
+      console.log("hitting the post", req.body);
       res.send("Hit the post");
     });
   } finally {
