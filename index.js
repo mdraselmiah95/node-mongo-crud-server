@@ -22,6 +22,12 @@ async function run() {
     await client.connect();
     const database = client.db("foodMaster");
     const usersCollection = database.collection("users");
+
+    //POST API
+    app.post("/users", async (req, res) => {
+      console.log("hitting the post");
+      res.send("Hit the post");
+    });
   } finally {
     await client.close();
   }
