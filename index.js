@@ -21,9 +21,9 @@ client.connect((err) => {
   // perform actions on the collection object
   console.log("Hitting the database");
   const user = {
-    name: "Tom cruse",
-    email: "tom@gmail.com",
-    phone: "019238356822",
+    name: "Alex Andrea",
+    email: "alex@gmail.com",
+    phone: "019234556822",
   };
   collection.insertOne(user).then(() => {
     console.log("insert success");
