@@ -17,7 +17,7 @@ const client = new MongoClient(uri, {
   useUnifiedTopology: true,
 });
 client.connect((err) => {
-  const collection = client.db("test").collection("devices");
+  const collection = client.db("foodMaster").collection("users");
   // perform actions on the collection object
   console.log("Hitting the database");
   const user = {
