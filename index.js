@@ -22,13 +22,6 @@ async function run() {
     await client.connect();
     const database = client.db("foodMaster");
     const usersCollection = database.collection("users");
-    // create a document to insert
-    const doc = {
-      name: "Special One",
-      email: "special@yahoo.com",
-    };
-    const result = await usersCollection.insertOne(doc);
-    console.log(`A document was inserted with the _id: ${result.insertedId}`);
   } finally {
     await client.close();
   }
