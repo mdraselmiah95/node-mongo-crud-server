@@ -35,7 +35,7 @@ async function run() {
       const result = await usersCollection.insertOne(newUser);
       console.log("got new user", req.body);
       console.log("added user", result);
-      res.send("Hit the post");
+      res.json(result);
     });
   } finally {
     await client.close();
