@@ -16,18 +16,21 @@ const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
-client.connect((err) => {
-  const collection = client.db("foodMaster").collection("users");
-  // perform actions on the collection object
-  console.log("Hitting the database");
-  const user = {
-    name: "Alex Andrea",
-    email: "alex@gmail.com",
-    phone: "019234556822",
-  };
-  collection.insertOne(user).then(() => {
-    console.log("insert success");
-  });
-  //   console.error(err);
-  //   client.close();
-});
+
+async function run() {
+  try {
+    await client.connect();
+    const database = client.db("foodMaster");
+    const usersCollection = database.collection("users");
+    // create a document to insert
+    const doc = {
+      name: "Special One",
+      email: "special@yahoo.com",
+    };
+    const result = await usersCollection.insertOne(doc);
+    console.log(`A document was inserted with the _id: ${result.insertedId}`);
+  } finally {
+    await client.close();
+  }
+}
+run().catch(console.dir);
