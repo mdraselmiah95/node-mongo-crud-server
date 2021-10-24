@@ -44,6 +44,12 @@ async function run() {
       console.log("added user", result);
       res.json(result);
     });
+
+    //DELETE API
+    app.delete("/users/:id", async (req, res) => {
+      const id = req.params.id;
+      console.log("Deleting user with id", id);
+    });
   } finally {
     // await client.close();
   }
