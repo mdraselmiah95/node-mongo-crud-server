@@ -53,7 +53,7 @@ async function run() {
       const result = await usersCollection.deleteOne(query);
 
       console.log("Deleting user with id", result);
-      res.json(1);
+      res.json(result);
     });
   } finally {
     // await client.close();
