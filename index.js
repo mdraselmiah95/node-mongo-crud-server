@@ -58,6 +58,7 @@ async function run() {
     app.put("/users/:id", async (req, res) => {
       const id = req.params.id;
       console.log("updating user", id);
+      res.send("updating");
     });
 
     //DELETE API
