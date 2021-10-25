@@ -53,6 +53,12 @@ async function run() {
       console.log("added user", result);
       res.json(result);
     });
+    //UPDATE API PUT
+
+    app.put("/users/:id", async (req, res) => {
+      const id = req.params.id;
+      console.log("updating user", id);
+    });
 
     //DELETE API
     app.delete("/users/:id", async (req, res) => {
